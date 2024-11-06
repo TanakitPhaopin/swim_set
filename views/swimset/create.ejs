@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <header><%- include('../_partial/_navbar.ejs'); -%></header>
+  <body>
+    <div>
+      <h1>Swim Set Create</h1>
+      <form action="/swimset" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" />
+        <label for="distance">Distance</label>
+        <input type="number" name="distance" id="distance" />
+        <label for="duration">Duration</label>
+        <input type="number" name="duration" id="duration" />
+        <label for="repetition">Repetition</label>
+        <input type="number" name="repetition" id="repetition" />
+        <label for="interval">Interval</label>
+        <input type="number" name="interval" id="interval" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

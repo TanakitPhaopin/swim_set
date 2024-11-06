@@ -1,6 +1,6 @@
-## Express Boiler Plate
+## Note
 
-This repository is a boiler palte for a Express web Application. 
-
-It is using ES Modules rather than commonJS, and has a directory structure that seperates our responsiblities and concerns. 
-
+1) Create swim set
+2) Store swim set in the database
+3) View all swim set and filter them
+4) select swim set to share as pdf
