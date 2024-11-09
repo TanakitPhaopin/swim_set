@@ -4,26 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <header><%- include('../_partial/_navbar.ejs'); -%></header>
   <body>
     <div>
-      <h1>Swim Set Create</h1>
-      <form action="/swimset" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
-        <label for="description">Description</label>
-        <input type="text" name="description" id="description" />
-        <label for="distance">Distance</label>
-        <input type="number" name="distance" id="distance" />
-        <label for="duration">Duration</label>
-        <input type="number" name="duration" id="duration" />
-        <label for="repetition">Repetition</label>
-        <input type="number" name="repetition" id="repetition" />
-        <label for="interval">Interval</label>
-        <input type="number" name="interval" id="interval" />
-        <button type="submit">Submit</button>
+      <h1 class="text-2xl ml-10 mt-5 mb-3">Create a Swim Set</h1>
+      <form action="/create" method="POST" class="mx-10 mb-10">
+        <!-- Container for the swim set details -->
+        <div id="swim-set-container">
+          <div>
+            <p class="text-l font-bold"><label for="warmup">Warm Up</label></p>
+            <textarea
+              name="warmup"
+              id="warmup"
+              rows="4"
+              cols="50"
+              class="border border-black pl-0.5"
+            ></textarea>
+          </div>
+          <div>
+            <p class="text-l font-bold">
+              <label for="premain">Pre-Main</label>
+            </p>
+            <textarea
+              name="premain"
+              id="premain"
+              rows="4"
+              cols="50"
+              class="border border-black pl-0.5"
+            ></textarea>
+          </div>
+          <div>
+            <p class="text-l font-bold">
+              <label for="mainset">Main Set</label>
+            </p>
+            <textarea
+              name="mainset"
+              id="mainset"
+              rows="7"
+              cols="50"
+              class="border border-black pl-0.5"
+            ></textarea>
+          </div>
+          <div>
+            <p class="text-l font-bold">
+              <label for="cooldown">Cool Down</label>
+            </p>
+            <textarea
+              name="cooldown"
+              id="cooldown"
+              rows="4"
+              cols="50"
+              class="border border-black pl-0.5"
+            ></textarea>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Create Swim Set
+        </button>
       </form>
     </div>
+
+    <!-- JavaScript to dynamically add sections -->
+    <script>
+      // Initialize SortableJS on the container
+      document.addEventListener("DOMContentLoaded", function () {
+        const swimSetContainer = document.getElementById("swim-set-container");
+        Sortable.create(swimSetContainer, {
+          animation: 150, // Smooth animation during dragging
+          ghostClass: "bg-gray-100", // Add a temporary class during drag
+        });
+      });
+    </script>
   </body>
 </html>

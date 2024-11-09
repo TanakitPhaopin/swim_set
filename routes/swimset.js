@@ -3,4 +3,7 @@ import * as swimsetController from '../controllers/swimset.js';
 
 export const swimsetRouter = express.Router()
 
-swimsetRouter.get('/create', swimsetController.create);
+swimsetRouter.get('/create', swimsetController.renderCreatePage);
+
+swimsetRouter.post('/create', swimsetController.createSwimSet);
+
