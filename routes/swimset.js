@@ -7,3 +7,4 @@ swimsetRouter.get('/create', swimsetController.renderCreatePage);
 
 swimsetRouter.post('/create', swimsetController.createSwimSet);
 
+swimsetRouter.get('/swimset', swimsetController.renderSwimSetList);
